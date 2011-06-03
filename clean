@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#  Author : Arjun S R <arjun1296@gmail.com>
+#  Date : Fri Jun  3 23:59:46 IST 2011
+#  Purpose : s8 Lab
+set -x
+rm -v *.o
+rm -v *~
+rm -v client server
+rm -rfd play_files/

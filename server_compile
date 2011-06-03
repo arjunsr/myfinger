@@ -1,0 +1,18 @@
+#!/bin/bash
+ 
+#  Author : Arjun S R <arjun1296@gmail.com>
+#  Date : Fri Jun  3 23:59:46 IST 2011
+#  Purpose : S8 Lab
+
+if [ -e $PWD/myfinger.h ]
+then 
+echo -e "Header Exists !\nSkipping rpcgen -C myfinger.x"
+else
+    echo -e "Compiling the myfinger.x file\n"
+    rpcgen -C myfinger.x
+fi
+set -x
+cc -c server.c -o server.o
+cc -c myfinger_svc.c -o myfinger_svc.o
+cc -c myfinger_xdr.c -o myfinger_xdr.o
+cc -o server server.o myfinger_svc.o myfinger_xdr.o -lnsl

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#  Author : Arjun S R <arjun1296@gmail.com>
+#  Date : Fri Jun  3 23:59:46 IST 2011
+#  Purpose : S8 Lab
+
+if [ ! -e $PWD/play_files.tar.gz ]
+then
+	echo -e "Sorry! tutorial file missing\n Failed to play\n"
+	exit
+else
+    	echo -e "##############################################################################################################"
+	echo -e "#########\t\t\t\tPlaying the tutorial for $USER\t\t\t\t######"
+	echo -e "##############################################################################################################"
+	echo -e "Starting at $(date)";
+fi;
+
+#set -x
+echo -e "Extracting the data for the replay from h4nnibal's typescript"
+tar -xvzf $PWD/play_files.tar.gz
+TYPESCRIPT_FILE=$PWD/play_files/typescript
+TIMING_FILE=$PWD/play_files/timingfile
+#set +x
+scriptreplay $TIMING_FILE $TYPESCRIPT_FILE
+echo -e "TUTORIAL IS OVER . HOPE IT WAS HELPFUL -- arjun sr alias h4nnibal\n"
+rm -rfd play_files/
