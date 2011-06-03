@@ -1,0 +1,15 @@
+Tutorial is there. You can watch it by opening up the terminal and executing
+0) ./play_tutorial
+    script.
+
+To compile and execute
+1) ./server_compile
+2) ./client_compile
+then
+sudo ./server &
+then ./client username hostname
+its done
+
+
+--
+Arjun S R
